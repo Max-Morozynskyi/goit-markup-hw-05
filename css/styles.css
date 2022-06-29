@@ -12,6 +12,8 @@
   --bg-clr-secondary: #f5f4fa;
   --bg-hero: #c4c4c4;
   --foot-icon: rgba(255, 255, 255, 0.1);
+  --bg-our-job: rgba(47, 48, 58, 0.8);
+  --overlay: rgba(0, 0, 0, 0.2);
   /* others */
   --hover-btn: #188ce8;
   --frame-clr: #ececec;
@@ -240,6 +242,7 @@ img {
 }
 /* qualities section */
 .title-qualities,
+.title-our-job,
 .title-join {
   margin-bottom: 10px;
 
@@ -269,7 +272,11 @@ img {
 
   background-color: var(--bg-clr-secondary);
 }
-/* photos section */
+/* our job section */
+.photo-thumb {
+  position: relative;
+}
+
 .photos-title,
 .workers-title,
 .customers-title {
@@ -280,9 +287,25 @@ img {
   text-align: center;
   letter-spacing: var(--ltr-spasing);
 }
+.title-our-job {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 70px;
+  margin-bottom: 0;
+
+  background-color: var(--bg-our-job);
+  color: #ffffff;
+}
 .photos .card-set {
   --items: 3;
 }
+
 /* workers section */
 .workers {
   background-color: var(--bg-clr-secondary);
