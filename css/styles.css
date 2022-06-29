@@ -58,6 +58,7 @@ img {
 .link:hover,
 .link:focus {
   color: var(--main-clr);
+  transition: color var(--transition-var);
 }
 .link-active::after {
   content: "";
@@ -87,6 +88,9 @@ img {
 .button:focus {
   color: var(--white-clr);
   background-color: var(--hover-btn);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: color var(--transition-var), box-shadow var(--transition-var),
+    background-color var(--transition-var);
 }
 .btn-active {
   color: var(--white-clr);
@@ -334,6 +338,8 @@ img {
 .social-item .social-link:focus {
   background-color: var(--main-clr);
   color: var(--white-clr);
+  transition: color var(--transition-var),
+    background-color var(--transition-var);
 }
 /* Regular customers */
 .customers-list {
@@ -357,6 +363,7 @@ img {
 .link-clients:hover,
 .link-clients:focus {
   border-color: var(--main-clr);
+  transition: border-color var(--transition-var), color var(--transition-var);
 }
 
 /* footer section */
@@ -406,6 +413,7 @@ img {
 .social-item:hover,
 .social-item:focus {
   background-color: var(--main-clr);
+  transition: background-color var(--transition-var);
 }
 /* END OF INDEX.HTML */
 
@@ -452,17 +460,10 @@ img {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
-/* .portfolio .card-set-item:hover,
-.portfolio .card-set-item:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-} */
 .portfolio .portfolio-link:hover,
 .portfolio .portfolio-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-.card-set-item > .portfolio-link:hover,
-.card-set-item > .portfolio-link:focus {
   color: var(--text-color);
+  transition: box-shadow var(--transition-var);
 }
