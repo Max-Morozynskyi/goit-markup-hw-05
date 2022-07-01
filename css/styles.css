@@ -23,7 +23,7 @@
   --ltr-spasing: 0.03em;
   --indent: 30px;
   /* transition */
-  --transition-var: 2500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-var: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* глобальныe стилu */
@@ -56,12 +56,12 @@ img {
 .link {
   text-decoration: none;
   color: inherit;
+  transition: color var(--transition-var);
 }
 .nav-link.link-active,
 .link:hover,
 .link:focus {
   color: var(--main-clr);
-  transition: color var(--transition-var);
 }
 .link-active::after {
   content: "";
@@ -85,6 +85,9 @@ img {
   border-radius: 4px;
   border: none;
 
+  transition: color var(--transition-var), box-shadow var(--transition-var),
+    background-color var(--transition-var);
+
   cursor: pointer;
 }
 .button:hover,
@@ -92,8 +95,6 @@ img {
   color: var(--white-clr);
   background-color: var(--hover-btn);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  transition: color var(--transition-var), box-shadow var(--transition-var),
-    background-color var(--transition-var);
 }
 .btn-active {
   color: var(--white-clr);
@@ -354,6 +355,8 @@ img {
   height: 44px;
 
   border-radius: 50%;
+  transition: color var(--transition-var),
+    background-color var(--transition-var);
 
   fill: currentColor;
 }
@@ -361,8 +364,6 @@ img {
 .social-item .social-link:focus {
   background-color: var(--main-clr);
   color: var(--white-clr);
-  transition: color var(--transition-var),
-    background-color var(--transition-var);
 }
 /* Regular customers */
 .customers-list {
@@ -382,11 +383,11 @@ img {
   border: 1px solid var(--icon-clr);
   border-radius: 4px;
   color: var(--icon-clr);
+  transition: border-color var(--transition-var), color var(--transition-var);
 }
 .link-clients:hover,
 .link-clients:focus {
   border-color: var(--main-clr);
-  transition: border-color var(--transition-var), color var(--transition-var);
 }
 
 /* footer section */
@@ -432,19 +433,13 @@ img {
 .join .social-item {
   color: var(--white-clr);
   background-color: var(--foot-icon);
+  transition: background-color var(--transition-var);
 }
 .social-item:hover,
 .social-item:focus {
   background-color: var(--main-clr);
-  transition: background-color var(--transition-var);
 }
 /* modal window */
-.backdrop.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition-var);
-}
 .backdrop {
   position: fixed;
   left: 0;
@@ -454,12 +449,25 @@ img {
   height: 100vh;
 
   background-color: var(--overlay);
+
+  opacity: 1;
+  transition: opacity var(--transition-var), visibility var(--transition-var);
+}
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scaleY(0.2);
 }
 .modal {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scaleY(1);
+  transition: transform var(--transition-var);
+  transform-origin: top center;
 
   width: 530px;
   height: 580px;
@@ -518,6 +526,7 @@ img {
   justify-content: center;
   align-items: center;
 
+  transition: transform var(--transition-var);
   background-color: var(--hover-overlay);
 }
 .portfolio-item-description {
@@ -548,6 +557,7 @@ img {
 }
 .link.portfolio-link {
   display: block;
+  transition: box-shadow var(--transition-var);
 }
 .filter-btn > .button:hover,
 .filter-btn > .button:focus {
@@ -559,10 +569,8 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
   color: var(--text-color);
-  transition: box-shadow var(--transition-var);
 }
 .portfolio-link:hover .overlay-item-description,
 .portfolio-link:focus .overlay-item-description {
   transform: translateY(0);
-  transition: transform var(--transition-var);
 }
